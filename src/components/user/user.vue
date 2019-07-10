@@ -1,86 +1,38 @@
 <template>
-    <el-table
-      :data="tableData"
-      style="width: 100%">
-      <el-table-column
-        prop="date"
-        label="日期"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="180">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址">
-      </el-table-column>
-    </el-table>
+  <el-table :data="tableData" style="width: 100%">
+    <el-table-column prop="id" label="主键" width="180"></el-table-column>
+    <el-table-column prop="username" label="账号" width="180"></el-table-column>
+    <el-table-column prop="nickname" label="昵称"></el-table-column>
+    <el-table-column prop="headPortraitUrl" label="头像"></el-table-column>
+    <el-table-column prop="status" label="状态"></el-table-column>
+    <el-table-column prop="email" label="邮箱"></el-table-column>
+    <el-table-column prop="phone" label="手机"></el-table-column>
+    <el-table-column prop="genTime" label="创建时间"></el-table-column>
+    <el-table-column prop="count" label="登录次数"></el-table-column>
+  </el-table>
 </template>
 <script>
+import * as userApi from './api/user'
 export default {
-      data() {
-        return {
-          tableData: [{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          },{
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }]
+  data() {
+    return {
+      tableData: []
+    };
+  },
+  methods: {
+    query: function() {
+      userApi.page_list(0, 10).then(res => {
+        if (res.success) {
+          this.tableData = res.queryResult.list;
         }
-      }
+      });
     }
+  },mounted(){
+    this.query();
+  }
+};
 </script>
 <style scoped>
-    
 </style>
 
 
