@@ -17,7 +17,7 @@
         <el-menu :default-openeds="[]" :default-active="$route.path" router>
           <el-submenu index="1">
             <template slot="title">
-              <i class="el-icon-message"></i>首页
+              <i class="el-icon-menu"></i>首页
             </template>
             <el-menu-item-group>
               <el-menu-item index="/">首页</el-menu-item>
@@ -25,18 +25,16 @@
           </el-submenu>
           <el-submenu index="2">
             <template slot="title">
-              <i class="el-icon-message"></i>管理
+              <i class="el-icon-menu"></i>用户管理
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/user">用户管理</el-menu-item>
-              <el-menu-item index="/user2">用户管理2</el-menu-item>
-              <el-menu-item index="1-1">选项3</el-menu-item>
-              <el-menu-item index="1-2">选项4</el-menu-item>
+              <el-menu-item index="/user">管理员用户</el-menu-item>
+              <el-menu-item index="/public_user">普通用户</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
           <el-submenu index="3">
             <template slot="title">
-              <i class="el-icon-message"></i>导航二
+              <i class="el-icon-menu"></i>导航二
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1">选项1</el-menu-item>
@@ -47,7 +45,7 @@
           </el-submenu>
           <el-submenu index="4">
             <template slot="title">
-              <i class="el-icon-message"></i>导航三
+              <i class="el-icon-menu"></i>导航三
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1">选项1</el-menu-item>
@@ -58,7 +56,7 @@
           </el-submenu>
           <el-submenu index="5">
             <template slot="title">
-              <i class="el-icon-message"></i>导航四
+              <i class="el-icon-menu"></i>导航四
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1">选项1</el-menu-item>
@@ -69,7 +67,7 @@
           </el-submenu>
           <el-submenu index="6">
             <template slot="title">
-              <i class="el-icon-message"></i>导航一
+              <i class="el-icon-menu"></i>导航一
             </template>
             <el-menu-item-group>
               <el-menu-item index="1-1">选项1</el-menu-item>
